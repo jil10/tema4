@@ -7,8 +7,8 @@ public class sopa_de_letras {
 
 	/*
 	 * METODO: public static void posicion().
-	 * 
-	 * 
+	 * ENTRADA:
+	 * SALIDA:
 	 * DESCRIPCIÓN: En este metodo lo que hace es que pide la palabra y te la coloca
 	 * aleatoriamente dentro de la sopa de letras.
 	 */
@@ -17,14 +17,14 @@ public class sopa_de_letras {
 		int f, c, i, k, l, con = 0;
 		String pal = null;
 
-		System.out.println("Introduce las palabras que quieres que esten en la sopa de letra :");
+		System.out.println("Introduce las palabras que quieres que esten en la sopa de letra: ");
 		do {
 			boolean ok = true;
 			boolean print = true;
 
 			try {
 				do {
-					System.out.println((con + 1) + " :");
+					System.out.println((con + 1) + ": ");
 					pal = t.next();
 					pal = pal.toUpperCase();
 				} while ((pal.length() < 3) || (pal.length() > 15) || (pal.matches(".*[^A-Z].*")));
@@ -79,7 +79,7 @@ public class sopa_de_letras {
 
 					case 2:// Vertical hacia abajo.
 
-						if ((f + (pal.length() - 1)) > 15) {
+						if ((f + (pal.length() - 1)) > 14) {
 							ok = false;
 						} else {
 							for (int j = 1; j < pal.length(); j++) {
@@ -96,7 +96,7 @@ public class sopa_de_letras {
 
 					case 3:// Horizontal de izquierda a derecha.
 
-						if ((c + (pal.length() - 1)) > 15) {
+						if ((c + (pal.length() - 1)) > 14) {
 							ok = false;
 						} else {
 							for (int j = 1; j < pal.length(); j++) {
@@ -165,7 +165,7 @@ public class sopa_de_letras {
 
 					case 7: // Diagonal hacia la izquierda y hacia abajo
 
-						if (((f + pal.length() - 1) > 15) || (c - (pal.length() - 1) < 0)) {
+						if (((f + pal.length() - 1) > 14) || (c - (pal.length() - 1) < 0)) {
 							ok = false;
 						} else {
 							for (int j = 1; j < pal.length(); j++) {
@@ -206,21 +206,23 @@ public class sopa_de_letras {
 
 	}
 
-	/*
-	 * METODO: public static void sopa(). ENTRADAS: SALIDAS: DESCRIPCIÓN:
+	 /* METODO: public static void sopa().
+	 * ENTRADAS:
+	 * SALIDAS:
 	 */
 
 	public static void sopa() {
 		int f, c;
 
 		for (f = 0; f < 15; f++) {
+			
 			for (c = 0; c < 15; c++) {
 				s[f][c] = (char) (Math.random() * 26 + 'a');
 
 			}
-			System.out.println();
+			
 		}
-		System.out.println();
+	
 
 		posicion();
 
@@ -234,8 +236,9 @@ public class sopa_de_letras {
 
 	}
 
-	/*
-	 * 
+	/* METODO: public static void main(String[] args).
+	 * SALIDAS:
+	 * ENTRADAS:
 	 */
 	public static void main(String[] args) {
 		int f, c;
